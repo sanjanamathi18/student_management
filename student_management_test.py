@@ -1,6 +1,7 @@
 from student_management import Student, StudentManager
 import unittest
 import json
+from unittest.mock import patch
 
 
 class TestStudentRegister(unittest.TestCase):
@@ -12,7 +13,13 @@ class TestStudentRegister(unittest.TestCase):
         self.student_manager.add_students(Student(2, "san", 25, "vg+", ["science", "history"]))
         self.assertEqual(self.student_manager.student_list[2].name, "san")
 
-    def test_view_students(self):
+    @patch("student_management.test_print")
+    def test_view_students(self, mock_print):
+        self.student_manager.add_students(Student(10, "vimal", 22, "g+", ["chemistry", "english"]))
+        self.student_manager.view_all_students()
+        mock_print.assert_any_call(
+            "ID: 10, Name: vimal, Age: 22, Grade: g+, Subjects: chemistry, english"
+        )
         pass
 
     def test_update_name(self):

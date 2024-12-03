@@ -5,6 +5,10 @@ import json
 from typing import List, Dict
 
 
+def test_print(message: str):
+    print(message)
+
+
 class Student:
     def __init__(self, id: int, name: str, age: int, grade: str, subjects: List[str]):
         self.id = id
@@ -22,7 +26,7 @@ class Student:
             "Subjects": self.subjects,
         }
 
-    def to_print(self):
+    def to_string(self):
         return f"ID: {self.id}, Name: {self.name}, Age: {self.age}, Grade: {self.grade}, Subjects: {', '.join(self.subjects)}"
 
 
@@ -38,7 +42,7 @@ class StudentManager:
 
     def view_all_students(self):
         for student in self.student_list.values():
-            print(student.to_print())
+            test_print(student.to_string())
 
     def update_name(self, id: int, name: str):
         self.student_list[id].name = name
