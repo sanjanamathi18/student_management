@@ -1,16 +1,11 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 
 
-name: Python application
+name: Flask unit test
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-permissions:
-  contents: read
+    branches: [ "test" ]
 
 jobs:
   build:
