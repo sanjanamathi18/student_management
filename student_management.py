@@ -38,7 +38,6 @@ class StudentManager:
 
     def add_students(self, student: Student):
         self.student_list[student.id] = student
-        print(f"Student {student.name} added successfully.")
 
     def view_all_students(self):
         for student in self.student_list.values():
@@ -87,17 +86,24 @@ class StudentManager:
             print("File is empty.")
 
     def field_to_update(self, id):
-        print("ID", "Name", "Age", "Grade", "Subjects")
+        print("""Which feild do want to update:
+              -> Name 
+              -> Age
+              -> Grade
+              -> Subjects
+              or Type end to stop.
+              """)
         while True:
             try:
                 feild = input("Enter field to update: ")
                 if not feild:
                     print("Feild cannot be empty.")
                     continue
+                if feild == "end":
+                    return
                 else:
                     if feild == "id":
                         print("ID cannot be updated")
-                        return
                     elif feild == "name":
                         value = self.get_name()
                         self.update_name(id, value)
