@@ -10,7 +10,9 @@ def test_print(message: str):
 
 
 class Student:
-    def __init__(self, id: int, name: str, age: int, grade: str, subjects: List[str]):
+    def __init__(
+        self, id: int = 0, name: str = "", age: int = 0, grade: str = "", subjects: List[str] = []
+    ):
         self.id = id
         self.name = name
         self.age = age
@@ -79,10 +81,10 @@ class StudentManager:
                         student["Subjects"],
                     )
                     self.add_students(student_obj)
-        except FileNotFoundError:
-            print("File doesn't exists.")
         except json.decoder.JSONDecodeError:
             print("File is empty.")
+        except FileNotFoundError:
+            return
 
     def field_to_update(self, id):
         print("""Which feild do want to update:
@@ -117,6 +119,11 @@ class StudentManager:
                         self.update_subjects(id, value)
             except ValueError as e:
                 print(f"Enter valid field. Failed with error {e}.")
+
+    def get_saved_student_data(self, id: int):
+        if self.check_id_exists(id):
+            return self.student_list[id]
+        return Student()
 
     def check_id_exists(self, id: int) -> bool:
         return id in self.student_list

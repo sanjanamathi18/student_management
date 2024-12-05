@@ -1,6 +1,7 @@
 from student_management import Student, StudentManager
 import unittest
 import json
+import os
 from unittest.mock import patch
 
 
@@ -57,5 +58,18 @@ class TestStudentRegister(unittest.TestCase):
             self.assertEqual(data["8"]["Name"], "durga")
 
     def test_load_students_from_file(self):
-        self.student_manager.load_students()
-        self.assertEqual(self.student_manager.student_list[8].name, "durga")
+        student_1 = Student(6, "Vimal", 23, "C", ["Biology"])
+        student_2 = Student(7, "kamal", 23, "C", ["Maths"])
+        student_3 = Student(8, "rajini", 23, "C", ["science"])
+        self.student_manager.add_students(student_1)
+        self.student_manager.add_students(student_2)
+        self.student_manager.add_students(student_3)
+        self.student_manager.save_students()
+        new_student_manager = StudentManager(self.file_name)
+        self.assertEqual(
+            new_student_manager.get_saved_student_data(6).to_dict(), student_1.to_dict()
+        )
+
+    def tearDown(self):
+        if os.path.exists(self.file_name):
+            os.remove(self.file_name)
