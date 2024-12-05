@@ -46,7 +46,7 @@ class TestStudentRegister(unittest.TestCase):
         self.student_manager.add_students(Student(7, "vim", 25, "vg+", ["science", "history"]))
         self.assertIn(7, self.student_manager.student_list)
         self.student_manager.delete_student(7)
-        self.assertNotIn(3, self.student_manager.student_list)
+        self.assertNotIn("7", self.student_manager.student_list)
 
     def test_save_to_file(self):
         self.student_manager.add_students(Student(8, "durga", 25, "vg+", ["telugu", "english"]))

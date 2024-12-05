@@ -57,7 +57,6 @@ class StudentManager:
 
     def delete_student(self, id: int):
         self.student_list.pop(id)
-        print("Student removed successfully.")
 
     def save_students(self):
         with open(self.file_name, "w") as writefile:

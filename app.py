@@ -12,7 +12,7 @@ def students():
 @app.route("/student/<int:id>")
 def specific_student(id):
     # code to show details of a specific student
-    return render_template("student_detail.html", student=student)
+    return render_template("student_detail.html", student=students)
 
 
 @app.route("/studentlist")
