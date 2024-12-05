@@ -1,7 +1,7 @@
 # Student Management System
-
+(Simple overview of use/purpose.)
 An interactive Student Management System.
-Student Management  is a Python - based system, where users can perform CRUD (Create, Read, Update, Delete) operations on student data. This system is capable of saving and loading data from a text file, and a Database, use functions for operations, and employ classes for data management.
+Student Management is a Python - based system, where users can perform CRUD (Create, Read, Update, Delete) operations on student data. This system is capable of saving and loading data from a text file, and a Database, use functions for operations, and employ classes for data management.
 
 ## Description
 
@@ -11,26 +11,22 @@ An in-depth paragraph about your project and overview of use.
 
 ### Dependencies
 
-blinker==1.9.0
-click==8.1.7
-Flask==3.1.0
-itsdangerous==2.2.0
-Jinja2==3.1.4
-MarkupSafe==3.0.2
-Werkzeug==3.1.3
+python requirements are mrentioned [here](requirements.txt)
 
-### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
 
 ### Executing program
+ - install python and git
+ - clone repo
+ - navigate to repo
+ - run following command
+ ```  
+ python3 student_management.py
+```
+Note:
+- recommendation is to use virtual environment and install the dependencies
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
+### Design
+
 
 ## Help
 
