@@ -32,7 +32,7 @@ class TestStudentRegister(unittest.TestCase):
         self.assertEqual(self.student_manager.student_list[3].name, "sanjana")
 
     def test_update_age(self):
-        self.student_manager.add_students(Student(4, "vimal", 22, "g+", ["chemistry", "english"]))
+        self.student_manager.add_students(Student(4, "Sanjana", 22, "g+", ["chemistry", "english"]))
         self.student_manager.update_age(4, 25)
         self.assertEqual(self.student_manager.student_list[4].age, 25)
 
