@@ -10,6 +10,10 @@ class TestStudentRegister(unittest.TestCase):
         self.file_name = "student_data_test.json"
         self.student_manager = StudentManager(self.file_name)
 
+    def test_check_id(self):
+        self.student_manager.add_students(Student(1, "vikram", 25, "vg+", ["science", "history"]))
+        self.assertTrue(self.student_manager.check_id_exists(1))
+
     def test_add_students(self):
         self.student_manager.add_students(Student(2, "san", 25, "vg+", ["science", "history"]))
         self.assertEqual(self.student_manager.student_list[2].name, "san")
@@ -21,7 +25,6 @@ class TestStudentRegister(unittest.TestCase):
         mock_print.assert_any_call(
             "ID: 10, Name: vimal, Age: 22, Grade: g+, Subjects: chemistry, english"
         )
-        pass
 
     def test_update_name(self):
         self.student_manager.add_students(Student(3, "vimal", 22, "g+", ["chemistry", "english"]))
