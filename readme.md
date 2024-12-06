@@ -23,7 +23,7 @@ This system is ideal for learning purposes, small-scale implementations in schoo
 
 ### Dependencies
 
-Python requirements are mrentioned [here](requirements.txt)
+Python requirements are mentioned [here](requirements.txt)
 
 ### Executing program
 1. Clone or download the repository.
