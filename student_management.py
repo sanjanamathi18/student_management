@@ -1,6 +1,3 @@
-# trying by myself to create student management program  - dictionaries in dictionary
-
-
 import json
 from typing import List, Dict
 
