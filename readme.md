@@ -88,7 +88,7 @@ Sanjana Mathiyalagan
 
 ## Version History
 * 1.0 
-    * Introduction of web based input
+    * Test cases for CRUD
 
 * 0.2
     * Various bug fixes and optimizations
