@@ -81,7 +81,7 @@ class StudentManager:
         except json.decoder.JSONDecodeError:
             print("File is empty.")
         except FileNotFoundError:
-            return
+            self.student_list = {}
 
     def field_to_update(self, id):
         print("""Which feild do want to update:
@@ -224,7 +224,7 @@ def main():
                 print("Enter student details.")
                 student = student_manager.get_student_data()
                 student_manager.add_students(student)
-
+                print(f"Student {student.name} added successfully.")
             elif choice == 2:
                 student_manager.view_all_students()
 
