@@ -26,9 +26,20 @@ This system is ideal for learning purposes, small-scale implementations in schoo
 Python requirements are mentioned [here](requirements.txt)
 
 ### Executing program
-1. Clone or download the repository.
+1. Clone or download the repository:
+   ```bash
+   git clone https://github.com/sanjanamathi18/student_management_system_web.git
+   ```
 2. Ensure Python is installed on your system.
-3. Install necessary dependencies (e.g., SQLite library, if using SQLite).
+
+3. Set up a virtual environment and install dependencies:
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   pip install -r requirements.txt
+  
+   ```
+
 4. Run the "student_management.py" file to start the application.
 Follow the interactive prompts to manage student records.
 
@@ -95,5 +106,3 @@ Sanjana Mathiyalagan
     * See [commit change]() 
 * 0.1
     * Initial Release - Working prototype
-
-
