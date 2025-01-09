@@ -120,9 +120,11 @@ class StudentManager:
                     elif feild == "grade":
                         value = self.get_grade()
                         self.update_grade(id, value)
-                    else:
+                    elif feild == "subjects":
                         value = self.get_subjects()
                         self.update_subjects(id, value)
+                    else:
+                        print("Enter valid field.")
             except ValueError as e:
                 print(f"Enter valid field. Failed with error {e}.")
 

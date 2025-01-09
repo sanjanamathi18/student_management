@@ -1,12 +1,11 @@
 {
     "1": {
         "ID": 1,
-        "Name": "sanju",
+        "Name": "sanjana",
         "Age": 23,
         "Grade": "vg",
         "Subjects": [
-            "math",
-            "english"
+            "math"
         ]
     },
     "3": {
