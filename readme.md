@@ -1,7 +1,7 @@
 # Student Management System
 
 An interactive Student Management System.
-Student Management is a Python - based system, where users can perform CRUD (Create, Read, Update, Delete) operations on student data. This system is capable of saving and loading data from a text file, and a Database, use functions for operations, and employ classes for data management.
+Student Management is a Python - based system, where users can perform CRUD (Create, Read, Update, Delete) operations on student data. This system is capable of saving and loading data from a text file, use functions for operations, and employ classes for data management.
 
 ## Description
 
@@ -11,24 +11,20 @@ It is designed to:
 
 Streamline Operations: Provide easy-to-use functions for creating, reading, updating, and deleting student records.
 
-Ensure Data Persistence: Support data saving and loading, enabling users to store records in a text file or a database.
+Ensure Data Persistence: Support data saving and loading, enabling users to store records in a text file.
 
 Demonstrate Programming Concepts: Showcase practical implementation of Python programming, including:
 Object-Oriented Programming (OOP) for managing data using classes.File handling for saving and retrieving records.
-Database integration for scalable and secure data storage.
 
 This system is ideal for learning purposes, small-scale implementations in schools or tuition centers, or as a foundational component for larger projects.
 
 ## Getting Started
 
-### Dependencies
-
-Python requirements are mentioned [here](requirements.txt)
 
 ### Executing program
 1. Clone or download the repository:
    ```bash
-   git clone https://github.com/sanjanamathi18/student_management_system_web.git
+   git clone https://github.com/sanjanamathi18/student_management.git
    ```
 2. Ensure Python is installed on your system.
 
@@ -36,7 +32,6 @@ Python requirements are mentioned [here](requirements.txt)
    ```bash
    python3 -m venv .venv
    source .venv/bin/activate
-   pip install -r requirements.txt
   
    ```
 
@@ -47,8 +42,6 @@ Follow the interactive prompts to manage student records.
  ```  
  python3 student_management.py
 ```
-Note:
-- recommendation is to use virtual environment and install the dependencies
 
 ### Design
 
@@ -74,22 +67,16 @@ Follow the flow of operations as described below:
     - **Choice 5**: Save and Exit
 
 
-
-
 ## Help
 
 Any advise for common problems or issues.
 
-For package installing issue
 ```
 python3 -m venv .venv
 
 source .ven/bin/activate
 
-pip install flask
-
 ```
-
 
 ## Authors
 
