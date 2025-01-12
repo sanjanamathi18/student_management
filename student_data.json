@@ -1,12 +1,11 @@
 {
     "1": {
         "ID": 1,
-        "Name": "sanju",
+        "Name": "vim",
         "Age": 23,
         "Grade": "vg",
         "Subjects": [
-            "math",
-            "english"
+            "math"
         ]
     },
     "3": {
@@ -26,6 +25,15 @@
         "Grade": "dew",
         "Subjects": [
             "math"
+        ]
+    },
+    "7": {
+        "ID": 7,
+        "Name": "Patrik",
+        "Age": 30,
+        "Grade": "VG",
+        "Subjects": [
+            "Historia"
         ]
     }
 }

@@ -6,6 +6,15 @@ def test_print(message: str):
     print(message)
 
 
+def validate_string(message: str):
+    if len(message) == 0:
+        return False
+    for n in message:
+        if not ((65 <= ord(n) <= 90) or (97 <= ord(n) <= 122)):
+            return False
+    return True
+
+
 class Student:
     def __init__(
         self, id: int = 0, name: str = "", age: int = 0, grade: str = "", subjects: List[str] = []
@@ -92,30 +101,29 @@ class StudentManager:
               or Type end to stop.
               """)
         while True:
-            try:
-                feild = input("Enter field to update: ")
-                if not feild:
-                    print("Feild cannot be empty.")
-                    continue
-                if feild == "end":
-                    return
+            feild = input("Enter field to update: ")
+            if not feild:
+                print("Feild cannot be empty.")
+                continue
+            if feild == "end":
+                return
+            else:
+                if feild == "id":
+                    print("ID cannot be updated")
+                elif feild == "name":
+                    value = self.get_name()
+                    self.update_name(id, value)
+                elif feild == "age":
+                    value = self.get_age()
+                    self.update_age(id, value)
+                elif feild == "grade":
+                    value = self.get_grade()
+                    self.update_grade(id, value)
+                elif feild == "subjects":
+                    value = self.get_subjects()
+                    self.update_subjects(id, value)
                 else:
-                    if feild == "id":
-                        print("ID cannot be updated")
-                    elif feild == "name":
-                        value = self.get_name()
-                        self.update_name(id, value)
-                    elif feild == "age":
-                        value = self.get_age()
-                        self.update_age(id, value)
-                    elif feild == "grade":
-                        value = self.get_grade()
-                        self.update_grade(id, value)
-                    else:
-                        value = self.get_subjects()
-                        self.update_subjects(id, value)
-            except ValueError as e:
-                print(f"Enter valid field. Failed with error {e}.")
+                    print("Enter valid field.")
 
     def get_saved_student_data(self, id: int):
         if self.check_id_exists(id):
@@ -150,11 +158,10 @@ class StudentManager:
         while True:
             try:
                 name = input("Enter student name: ")
-                if not name:
-                    print("Name cannot be empty.")
+                if not validate_string(name):
+                    print("Invalid Name.")
                     continue
                 return name
-
             except ValueError as e:
                 print(f"Enter valid value. Failed with error {e}.")
 
@@ -174,8 +181,8 @@ class StudentManager:
         while True:
             try:
                 grade = input("Enter student grade: ")
-                if not grade:
-                    print("Grade cannot be empty.")
+                if not validate_string(grade):
+                    print("Invalid Grade.")
                     continue
                 return grade
             except ValueError as e:
@@ -195,8 +202,8 @@ class StudentManager:
         n = 1
         while n <= count:
             sub = input(f"Enter subject {n} : ")
-            if not sub:
-                print("Subject cannot be empty.")
+            if not validate_string(sub):
+                print("Invalid Subject.")
                 continue
             else:
                 subjects.append(sub)
