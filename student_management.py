@@ -101,32 +101,29 @@ class StudentManager:
               or Type end to stop.
               """)
         while True:
-            try:
-                feild = input("Enter field to update: ")
-                if not feild:
-                    print("Feild cannot be empty.")
-                    continue
-                if feild == "end":
-                    return
+            feild = input("Enter field to update: ")
+            if not feild:
+                print("Feild cannot be empty.")
+                continue
+            if feild == "end":
+                return
+            else:
+                if feild == "id":
+                    print("ID cannot be updated")
+                elif feild == "name":
+                    value = self.get_name()
+                    self.update_name(id, value)
+                elif feild == "age":
+                    value = self.get_age()
+                    self.update_age(id, value)
+                elif feild == "grade":
+                    value = self.get_grade()
+                    self.update_grade(id, value)
+                elif feild == "subjects":
+                    value = self.get_subjects()
+                    self.update_subjects(id, value)
                 else:
-                    if feild == "id":
-                        print("ID cannot be updated")
-                    elif feild == "name":
-                        value = self.get_name()
-                        self.update_name(id, value)
-                    elif feild == "age":
-                        value = self.get_age()
-                        self.update_age(id, value)
-                    elif feild == "grade":
-                        value = self.get_grade()
-                        self.update_grade(id, value)
-                    elif feild == "subjects":
-                        value = self.get_subjects()
-                        self.update_subjects(id, value)
-                    else:
-                        print("Enter valid field.")
-            except ValueError as e:
-                print(f"Enter valid field. Failed with error {e}.")
+                    print("Enter valid field.")
 
     def get_saved_student_data(self, id: int):
         if self.check_id_exists(id):
